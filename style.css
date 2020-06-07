@@ -1,0 +1,678 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  color: #404040;
+}
+
+body {
+  font-family: "M PLUS Rounded 1c";
+  /* font-family: 'Permanent Marker', cursive; */
+  font-family: 'Chelsea Market', cursive;
+  font-size: 1.6rem;
+}
+
+.inner {
+  overflow: hidden;
+}
+
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8rem 2rem;
+}
+
+.fixed-bg {
+  max-width: 100vw;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.effect-fade-b {
+  opacity : 0;
+  transform : translate(0, 5rem);
+  transition : all 2000ms;
+}
+
+.effect-fade-r {
+  opacity : 0;
+  transform : translate(5rem, 0);
+  transition : all 2000ms;
+}
+  
+.effect-fade-l {
+  opacity : 0;
+  transform : translate(-5rem, 0);
+  transition : all 2000ms;
+}
+
+.effect-fade-b.effect-scroll, .effect-fade-r.effect-scroll, .effect-fade-l.effect-scroll,.effect-fade-delay.effect-scroll {
+  opacity : 1;
+  transform : translate(0, 0);
+}
+
+.effect-fade-delay {
+  opacity : 0;
+  transform : translate(0, 5rem);
+  transition : all 2000ms;
+}
+
+/*-- コンテンツタイトル ---------------------------------------*/
+.ttl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 8rem;
+}
+
+.ttl > h1 {
+  font-size: 2.4rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.ttl > h1 > span {
+  color: #00b7ff;
+  font-size: 1.8rem;
+}
+
+i {
+  font-size: 4.5rem;
+  margin-right: 2rem;
+}
+
+
+/*-- ヘッダー ---------------------------------------*/
+.top-img img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 50% 0%;
+  vertical-align: bottom;
+  position: relative;
+  text-align: center;
+  animation: fadeIn 5s ease-in 0s 1 normal;
+}
+
+@keyframes fadeIn { 
+  0% {opacity: 0} 
+  100% {opacity: 1} 
+} 
+
+.top-img h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 4.8rem;
+  text-align: center;
+  line-height: 1.1;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+} 
+
+.br:before {
+  content: "\A" ;
+  white-space: pre;
+}
+
+.top-img p {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+}
+
+.fa-angle-double-down {
+  display: block;
+  padding: 0.5rem 0 1rem 0;
+  font-size: 2rem;
+  margin-right: 0;
+  text-align: center;
+}
+
+nav {
+  height: 5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.nav-box h1 {
+  flex: 1;
+  line-height: 5rem;
+}
+
+.native-menu {
+  display: flex;
+  justify-content: space-between;
+  flex: 3;
+}
+
+.native-menu li {
+  width: 19%;
+  height: 100%;
+  /* background-color: #ff4242; */
+  text-align: center;
+  position: relative;
+}
+
+.food-r.scroll-color, .cat-r.scroll-color, .goldfish-r.scroll-color, .contact-r.scroll-color {
+  background-color: #ff4242;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+
+.native-menu li p {
+  font-size: 1.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.nav-box ul li {
+  display: block;
+  cursor: pointer;
+}
+
+.nav-box > ul > li > p > span, .hidden-menu > li > span {
+  display: block;
+  color: #0080ff;
+  font-size: 1.2rem;
+}
+
+nav.nav_fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* -- 🍔 --------- */
+.hidden-menu {
+  display: block;
+  background-color: #ffffff;
+  width: 40vw;
+  height: 100vh;
+  text-align: center;
+  padding: 5rem 0;
+  position: absolute;
+  top: 0;
+  right: -100vw;
+  z-index: 13;
+  transition: all 0.3s ease;
+  position: fixed;
+}
+
+.hidden-menu li {
+  padding: 2rem 0;
+}
+
+
+.hidden-menu li:nth-child(2) {
+  padding: 0 0 2rem;
+}
+
+.fa-times {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  margin-right: 0;
+  font-size: 3.2rem;
+}
+
+.nav-box {
+  position: relative;
+}
+
+.fa-bars {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  margin-right: 0;
+  font-size: 3.2rem;
+  z-index: 12;
+}
+
+.open, .close {
+  display: none;
+}
+
+
+#menu {
+  position: absolute;
+  right: 100vw;
+}
+
+
+
+
+
+
+/*-- フード ------------------------------------------------------*/
+/*-- スライダー --*/
+.prev-arrow {
+  font-size: 3rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.next-arrow {
+  font-size: 3rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+i.slide-arrow {
+  margin-right: 0;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -4rem;
+}
+/*-- スライダー --*/
+
+.slick-slide {
+  height: auto;
+}
+
+.food-slick {
+  padding: 0 2rem;
+}
+
+.food-box {
+  padding: 0 1rem;
+}
+
+.circle-img {
+  width: 70%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.circle-img::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.circle-img > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.food-box h2 {
+  font-size: 2rem;
+  color: #00b7ff;
+  text-align: center;
+  padding: 3rem 0 0.5rem 0;
+}
+
+.food-box p {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  letter-spacing: 0.2rem;
+  text-align: justify;
+}
+
+/*-- 猫 -------------------------------------------------------*/
+.cat.container {
+  background-image: url(img/IMG_0004.JPG);
+}
+
+.cat.ttl {
+  color: #ffffff;
+}
+
+.cat-contents {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cat-box {
+  display: flex;
+  padding-bottom: 8rem;
+}
+
+.order {
+  order: 1;
+}
+
+.cat-box:last-child {
+  padding-bottom: 0;
+}
+
+.box-img {
+  width: 15rem;
+  position: relative;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.cat-box .box-img:hover {
+  transform: scale(1.5);
+}
+
+.box-img::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.box-img img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: 0.3rem solid #ffffff;
+}
+
+.box-txt {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5rem;
+}
+
+.cat-box h2 {
+  font-size: 2rem;
+  color: #00b7ff;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.cat-box p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: #ffffff;
+  flex: 1;
+  letter-spacing: 0.1rem;
+  text-align: justify;
+}
+
+
+
+/*-- 金魚 -------------------------------------------------------*/
+.goldfish-contents {
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+}
+
+.goldfish-box {
+  width: 15rem;
+  transition: all 0.2s;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+.goldfish-box.is-empty {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.goldfish-box:hover {
+  transform: scale(1.2);
+}
+
+.box-img {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+
+.box-mask {
+  width: 100%;
+  height:	100%;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	opacity: 0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);
+  transition:		all 0.2s ease-in 0.2s;
+  color: #ffffff;
+  border-radius: 1rem;
+  transition: all 0.2s;
+}
+
+.box-mask:hover {
+  opacity: 1;	/* マスクを表示する */
+}
+
+.box-mask p{
+  width: 100%;
+  line-height: 1.3;
+  letter-spacing: 0.1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 1rem;
+  text-align: justify;
+}
+
+/*-- お問い合わせ ------------------------------------------------------*/
+.contact.container {
+  background-image: url(img/IMG_0086.JPG);
+  padding: 0;
+  color: #ffffff;
+}
+
+.contact-mask {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 8rem 2rem;
+}
+
+
+
+form ul {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form ul li {
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.name-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-box li {
+  width: 45%;
+}
+
+input {
+  width: 100%;
+  height: 2.5rem;
+  font-size: 100%;
+  padding: 0 1rem;
+}
+
+input::placeholder {
+  font-size: 1rem;
+}
+
+textarea {
+  width: 100%;
+  height: 10rem;
+  font-size: 100%;
+  padding: 1rem 0 0 1rem;
+}
+
+textarea::placeholder{
+  font-size: 1rem;
+}
+
+.agree {
+  text-align: center;
+  padding: 3rem 0 1rem 0;
+}
+
+.agree input {
+  width: 1.6rem;
+  vertical-align: bottom;
+  margin-right: 1rem;
+  text-align: center;
+}
+
+.agree a {
+  color: #00ff99;
+}
+
+button {
+  display: block;
+  width: 30%;
+  font-size: 1.6rem;
+  letter-spacing: 1rem;
+  background-color: #004cfe;
+  color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 0 auto;
+  cursor: pointer;
+  outline: none;
+  transition: 0.4s;
+  text-indent: 1rem;
+}
+
+button:hover {
+  background-color: #3a75ff;
+}
+
+.gender input {
+  width: 1.5rem;
+  font-size: 100%;
+  vertical-align: bottom;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.gender p {
+  display: inline-block;
+  margin-right: 1.9rem;
+  cursor: pointer;
+}
+
+.gender-place {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gender-place li {
+  width: 45%;
+}
+
+select {
+  font-size: 1.2rem;
+  height: 2.5rem;
+  padding: 0 1rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+/*-- お問い合わせモーダル ---------------------------------------------*/
+.submit-mask {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 11;
+  display: none;
+}
+
+.submit-modal {
+  background-color: #ffffff;
+  max-width: 600px;
+  width: 80%;
+  color: #404040;
+  border-radius: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3rem 3rem 2rem 3rem;
+  position: fixed;
+  display: none;
+}
+
+.submit-modal > p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.submit {
+  background-color: #ff3333;
+  color: #ffffff;
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.submit-close {
+  background-color: #818181;
+  width: 15%;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+
+
+/*-- フッター ------------------------------------------------------*/
+footer {
+  background-color: #404040;
+  color: #818181;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 1.5rem 0;
+}
+
+
+
+
