@@ -1,17 +1,17 @@
 $(function() {
 
-  var timer = false;
+  // var timer = false;
 
-  $(window).resize(function() {
-  if (timer !== false) {
-  clearTimeout(timer);
-  }
+  // $(window).resize(function() {
+  // if (timer !== false) {
+  // clearTimeout(timer);
+  // }
 
-  timer = setTimeout(function() {
-  //リロードする
-  location.reload();
-  }, 200);
-  });
+  // timer = setTimeout(function() {
+  // //リロードする
+  // location.reload();
+  // }, 200);
+  // });
 
   // nav固定-------------------------------------------------
   var navPos = $( 'nav' ).offset().top; // グローバルメニューの位置
